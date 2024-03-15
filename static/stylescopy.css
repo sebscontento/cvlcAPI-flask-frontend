@@ -1,0 +1,113 @@
+/* CSS with px */
+
+.select-container {
+    display: flex;
+    align-items: center; /* Align items vertically */
+    justify-content: center;
+    gap: 70px; /* Add some space between flex items */
+    margin-top: 20px; 
+    margin-bottom: 20px; /* Increase margin between select menu and play button */
+    background-color:hsla(0,0%,40%,0.1);
+    border-radius: 30px; /* Adjust the value as per your preference for rounded corners */
+    overflow: hidden; /* This ensures that child elements don't overflow the rounded corners */
+}
+
+.selectbutton {
+    margin: 5px; /* Add margin between buttons */
+}
+.button-container {
+    display: flex;
+    justify-content: space-between; /* Adjust as per your preference */
+    flex-wrap: wrap; /* Allow items to wrap to the next line if there's not enough space */
+    margin-bottom: 20px; /* Increase margin between select menu and play button */
+    background-color: hsla(0, 100%, 40%, 0.1);
+    border-radius: 30px; /* Adjust the value as per your preference for rounded corners */
+    overflow: hidden; /* This ensures that child elements don't overflow the rounded corners */
+    
+}
+
+.mainbutton {
+    text-align: center; /* Center align the text */
+    margin: 15px; /* Add margin between buttons */
+}
+
+.shuffle-container {
+    display: flex;
+    align-items: center; /* Align items vertically */
+    justify-content: center;
+    gap: 20px; /* Add some space between flex items */
+    margin-bottom: 20px; /* Increase margin between select menu and play button */
+    flex-wrap: wrap; /* Allow items to wrap to the next line if there's not enough space */
+    background-color:hsla(0,0%,40%,0.1);
+    border-radius: 30px; /* Adjust the value as per your preference for rounded corners */
+    overflow: hidden; /* This ensures that child elements don't overflow the rounded corners */
+}
+
+.shufflebutton {
+    text-align: center; /* Center align the text */
+    margin: 10px; /* Add margin between buttons */
+}
+
+
+.picture-container {
+    display: flex;
+    align-items: center; /* Align items vertically */
+    justify-content: center;
+    gap: 60px; /* Add some space between flex items */
+    background-color:hsl(120,100%,95%);
+    border-radius: 30px; /* Adjust the value as per your preference for rounded corners */
+    overflow: hidden; /* This ensures that child elements don't overflow the rounded corners */
+}
+
+.picbutton {
+    text-align: center; /* Center align the text */
+    margin: 5px; /* Add margin between buttons */
+}
+
+
+.button img {
+    transition: transform 0.2s ease-in-out;
+}
+
+p {
+    font-size: 10px; /* Set the font size */
+    color: #333; /* Set the text color */
+    margin-bottom: 15px; /* Set the bottom margin */
+    /* Add more styles as needed */
+}
+
+#videoSelect {
+width: 90px; /* Set the width of the dropdown */
+padding: 8px; /* Add some padding for better appearance */
+border: 1px solid #ccc; /* Add a border */
+border-radius: 4px; /* Round the corners */
+font-size: 16px; /* Set the font size */
+background-color: #d3d0d0; /* Set background color */
+color: #333; /* Set text color */
+}
+
+#videoSelect:hover {
+border-color: #999; /* Change border color on hover */
+}
+
+
+/* Style the dropdown arrow */
+#videoSelect::after {
+content: '\25BC'; /* Unicode character for down arrow */
+position: absolute;
+top: 50%;
+right: 10px;
+transform: translateY(-50%);
+pointer-events: none; /* Ensure the arrow doesn't interfere with clicking */
+}
+
+
+/* Apply the animation on touch events for mobile devices */
+@media (hover: none) {
+.selectbutton:active,
+.mainbutton:active,
+.shufflebutton:active,
+.picbutton:active {
+    transform: scale(1.1); /* Scale the button slightly on touch */
+}
+}
