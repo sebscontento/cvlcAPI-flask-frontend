@@ -1,18 +1,31 @@
 # README.md
 
-##Flask Frontend for CVLC Backend
+## Flask Frontend for CVLC Backend
 
 This is a Flask frontend application designed to work with the CVLC (Command Line VLC) backend for video streaming and processing.
 Launching the Flask App
 
-###To launch the Flask app, navigate to the project directory and run the following command:
+## Installation
+
+1. Clone the repository:
+
+    ```
+    git clone <https://github.com/sebscontento/cvlcAPI-flask-frontend>
+    ```
 
 
-###bash command launch app 
+## install requirements
+
+pip install -r requirements.txt
+
+### To launch the Flask app, navigate to the project directory and run the following command:
+
+
+### bash command launch app 
 
 python3 app.py
 
-###launch with bashscript start_app.sh
+### launch with bashscript start_app.sh
 - remember to give the bash script permissions to run 
 
 
@@ -20,7 +33,7 @@ python3 app.py
 
 
 
-###Configuration
+### Configuration
 
 To make changes or add IP addresses and specify the video folder, edit the config.json file located at ../static/config.json
 
@@ -33,13 +46,13 @@ To make changes or add IP addresses and specify the video folder, edit the confi
   ]
 }
 
-###Instructions
+### Instructions
 
     Run the CVLC backend application.
     Write the IP addresses and specify the video folder for active servers in the config.json file.
     Launch the frontend Flask application using the command mentioned above.
 
 
-###Stopping the App
+### Stopping the App
 
 To stop the Flask app, simply press Ctrl + C in the terminal where it is running.
