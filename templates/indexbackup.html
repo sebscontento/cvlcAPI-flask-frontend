@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sebs Multi-Server Video Player</title>
+
+    <style>
+
+
+        .select-container {
+            display: flex;
+            align-items: center; /* Align items vertically */
+            justify-content: center;
+            gap: 70px; /* Add some space between flex items */
+            margin-top: 20px; 
+            margin-bottom: 20px; /* Increase margin between select menu and play button */
+            background-color:hsla(0,0%,40%,0.1);
+            border-radius: 30px; /* Adjust the value as per your preference for rounded corners */
+            overflow: hidden; /* This ensures that child elements don't overflow the rounded corners */
+        }
+    
+        .selectbutton {
+            margin: 5px; /* Add margin between buttons */
+        }
+       .button-container {
+            display: flex;
+            justify-content: space-between; /* Adjust as per your preference */
+            flex-wrap: wrap; /* Allow items to wrap to the next line if there's not enough space */
+            margin-bottom: 20px; /* Increase margin between select menu and play button */
+            background-color: hsla(0, 100%, 40%, 0.1);
+            border-radius: 30px; /* Adjust the value as per your preference for rounded corners */
+            overflow: hidden; /* This ensures that child elements don't overflow the rounded corners */
+            
+        }
+
+        .mainbutton {
+            text-align: center; /* Center align the text */
+            margin: 15px; /* Add margin between buttons */
+        }
+
+        .shuffle-container {
+            display: flex;
+            align-items: center; /* Align items vertically */
+            justify-content: center;
+            gap: 20px; /* Add some space between flex items */
+            margin-bottom: 20px; /* Increase margin between select menu and play button */
+            flex-wrap: wrap; /* Allow items to wrap to the next line if there's not enough space */
+            background-color:hsla(0,0%,40%,0.1);
+            border-radius: 30px; /* Adjust the value as per your preference for rounded corners */
+            overflow: hidden; /* This ensures that child elements don't overflow the rounded corners */
+        }
+
+        .shufflebutton {
+            text-align: center; /* Center align the text */
+            margin: 10px; /* Add margin between buttons */
+        }
+
+
+        .picture-container {
+            display: flex;
+            align-items: center; /* Align items vertically */
+            justify-content: center;
+            gap: 60px; /* Add some space between flex items */
+            background-color:hsl(120,100%,95%);
+            border-radius: 30px; /* Adjust the value as per your preference for rounded corners */
+            overflow: hidden; /* This ensures that child elements don't overflow the rounded corners */
+        }
+    
+        .picbutton {
+            text-align: center; /* Center align the text */
+            margin: 5px; /* Add margin between buttons */
+        }
+    
+    
+        .button img {
+            transition: transform 0.2s ease-in-out;
+        }
+
+        p {
+            font-size: 10px; /* Set the font size */
+            color: #333; /* Set the text color */
+            margin-bottom: 15px; /* Set the bottom margin */
+            /* Add more styles as needed */
+        }
+        
+        #videoSelect {
+  width: 90px; /* Set the width of the dropdown */
+  padding: 8px; /* Add some padding for better appearance */
+  border: 1px solid #ccc; /* Add a border */
+  border-radius: 4px; /* Round the corners */
+  font-size: 16px; /* Set the font size */
+  background-color: #d3d0d0; /* Set background color */
+  color: #333; /* Set text color */
+}
+
+#videoSelect:hover {
+  border-color: #999; /* Change border color on hover */
+}
+
+
+/* Style the dropdown arrow */
+#videoSelect::after {
+  content: '\25BC'; /* Unicode character for down arrow */
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  pointer-events: none; /* Ensure the arrow doesn't interfere with clicking */
+}
+
+    
+        /* Apply the animation on touch events for mobile devices */
+    @media (hover: none) {
+        .selectbutton:active,
+        .mainbutton:active,
+        .shufflebutton:active,
+        .picbutton:active {
+            transform: scale(1.1); /* Scale the button slightly on touch */
+        }
+    }
+
+    
+    </style>    
+</head>
+<body>
+
+    <!--  <h1>Sebs Multi-Server Video Player</h1> -->
+
+    <div class="select-container">
+        <!-- <label for="videoSelect">Select Video:</label> -->
+
+        
+        <select id="videoSelect">
+            <option value="1.mp4">1.mp4</option>
+            <option value="2.mp4">2.mp4</option>
+            <option value="3.mp4">3.mp4</option>
+            <option value="4.mp4">4.mp4</option>
+            <option value="5.mp4">5.mp4</option>
+            <option value="6.mp4">6.mp4</option>
+            <option value="7.mp4">7.mp4</option>
+            <option value="8.mp4">8.mp4</option>
+            <!-- Add other video options here -->
+        </select>
+        <div class="selectbutton">
+            <img src="{{ url_for('static', filename='images/play.png') }}" alt="Play" onclick="makeApiCall('play', '/play')">
+            <!-- <p>Play</p> -->
+
+            
+        </div>
+    </div>
+    
+
+    <div class="button-container">
+        <div class="mainbutton">
+            <img src="{{ url_for('static', filename='images/play_first_icon.png') }}" alt="Play First Video" onclick="playFirstVideo()">
+            <p>Play First Video</p>
+        </div>
+        
+        <div class="mainbutton">
+            <img src="{{ url_for('static', filename='images/previous.png') }}" alt="Previous" onclick="playPreviousVideo()">
+            <p>Previous</p>
+        </div>
+        
+        <div class="mainbutton">
+            <img src="{{ url_for('static', filename='images/next.png') }}" alt="Next" onclick="playNextVideo()">
+            <p>Next</p>
+        </div>
+        
+        <div class="mainbutton">
+            <img src="{{ url_for('static', filename='images/stop.png') }}" alt="Stop" onclick="makeApiCall('stop', '/stop')">
+            <p>Stop</p>
+        </div>
+        
+        <div class="mainbutton">
+            <img src="{{ url_for('static', filename='images/pause.png') }}" alt="Pause" onclick="makeApiCall('pause', '/pause')">
+            <p>Pause</p>
+        </div>
+        
+        <div class="mainbutton">
+            <img src="{{ url_for('static', filename='images/resume.png') }}" alt="Resume" onclick="makeApiCall('resume', '/resume')">
+            <p>Resume</p>
+        </div>
+        
+        <div class="mainbutton">
+            <img src="{{ url_for('static', filename='images/restart.png') }}" alt="Restart" onclick="makeApiCall('restart', '/restart')">
+            <p>Restart</p>
+        </div>
+    </div>
+    
+    <!-- <h2>Playlists</h2> -->
+
+    
+
+    <div class="shuffle-container">
+        <div class="shufflebutton">
+            <img src="{{ url_for('static', filename='images/playlist.png') }}" alt="Play Sequential Playlist" onclick="startPlaylist1()">
+            <p>Play1</p>
+        </div>
+        
+        <div class="shufflebutton">
+            <img src="{{ url_for('static', filename='images/shuffle.png') }}" alt="Play Random Playlist" onclick="startPlaylist2()">
+            <p>Randomplaylist</p>
+        </div>
+        
+        <div class="shufflebutton">
+            <img src="{{ url_for('static', filename='images/purplestop.png') }}" alt="stop Playlist" onclick="stopPlaylist()">
+            <p>Stop Playlist</p>
+        </div>
+    </div>
+   
+
+    <!-- <h2>Pictures</h2> -->
+
+    <div class="picture-container">
+        <div class="picbutton">
+            <img src="{{ url_for('static', filename='images/picture.png') }}" alt="Display Picture" onclick="displayPicture()">
+            <p>Display Picture</p>
+        </div>
+        
+        <div class="picbutton">
+            <img src="{{ url_for('static', filename='images/picturestop.png') }}" alt="Close Picture" onclick="closePicture()">
+            <p>Close Picture</p>
+        </div>
+    </div>
+    
+    <script>
+        var videoIndex = 0; // Keep track of the currently playing video index
+
+        var config = {
+            "servers": [
+                {
+                    "ip": "http://192.168.0.199:5000",
+                    "baseVideoPath": "/home/seb/dev/artinstallation31maj/flasklogic/videos/"
+                },
+                {
+                    "ip": "http://192.168.0.191:5000",
+                    "baseVideoPath": "/home/music/dev/artinstallation31maj/flasklogic/videos/"
+                },
+                {
+                    "ip": "http://192.168.1.101:5000",
+                    "baseVideoPath": "/home/kristoffer/dev/artinstallation31maj/flasklogic/videos/"
+                    
+                },
+                {
+                    "ip": "http://192.168.1.105:5000",
+                    "baseVideoPath": "/home/kristoffer/dev/artinstallation31maj/flasklogic/videos/"
+                
+                },
+                {
+                    "ip": "http://192.168.1.107:5000",
+                    "baseVideoPath": "/home/kristoffer/dev/artinstallation31maj/flasklogic/videos/"
+                }
+            ]
+        };
+
+        function playFirstVideo() {
+            playVideo(0);
+        }
+
+        function playNextVideo() {
+            videoIndex++;
+            if (videoIndex >= document.getElementById("videoSelect").options.length) {
+                videoIndex = 0; // Reset index if it exceeds the number of options
+            }
+            playVideo(videoIndex);
+        }
+
+        function playPreviousVideo() {
+            videoIndex--;
+            if (videoIndex < 0) {
+                videoIndex = document.getElementById("videoSelect").options.length - 1; // Set index to last option if it's less than 0
+            }
+            playVideo(videoIndex);
+        }
+
+        function playVideo(index) {
+            document.getElementById("videoSelect").selectedIndex = index; // Set selected index
+            makeApiCall('play', '/play'); // Play on servers
+        }
+
+        function makeApiCall(action, endpoint) {
+            var selectedVideo = document.getElementById("videoSelect").value;
+
+            config.servers.forEach(function(server) {
+                var data = { "filename": server.baseVideoPath + selectedVideo };
+                fetch(server.ip + endpoint, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(data)
+                })
+                .then(response => {
+                    if (response.ok) {
+                        console.log("Request sent to " + server.ip + " successfully.");
+                    } else {
+                        console.error("Failed to send request to " + server.ip + ". Status code: " + response.status);
+                    }
+                })
+                .catch(error => {
+                    console.error("Error sending request to " + server.ip + ": " + error);
+                });
+            });
+        }
+
+        function startPlaylist1() {
+            sendPlaylistRequest('POST', '/playlist/start', {playlist_name: 'play1.sh'})
+                .then(response => console.log(response))
+                .catch(error => console.error('Error:', error));
+        }
+
+        function startPlaylist2() {
+            sendPlaylistRequest('POST', '/playlist/start', {playlist_name: 'randomplaylist1.sh'})
+                .then(response => console.log(response))
+                .catch(error => console.error('Error:', error));
+        }
+
+        function stopPlaylist() {
+            sendPlaylistRequest('POST', '/playlist/stop', {})
+                .then(response => console.log(response))
+                .catch(error => console.error('Error:', error));
+        }
+
+        function sendPlaylistRequest(method, endpoint, data) {
+            return Promise.all(config.servers.map(server => {
+                return fetch(server.ip + endpoint, {
+                    method: method,
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(data)
+                })
+                .then(response => {
+                    if (response.ok) {
+                        console.log("Playlist request sent to " + server.ip + " successfully.");
+                        return response.json();
+                    } else {
+                        console.error("Failed to send playlist request to " + server.ip + ". Status code: " + response.status);
+                        throw new Error('Failed to send playlist request');
+                    }
+                })
+                .catch(error => {
+                    console.error("Error sending playlist request to " + server.ip + ": " + error);
+                    throw error;
+                });
+            }));
+        }
+
+        function displayPicture() {
+            config.servers.forEach(function(server) {
+                fetch(server.ip + '/picture?picture_name=black.png')
+                .then(response => {
+                    if (response.ok) {
+                        console.log("Picture request sent to " + server.ip + " successfully.");
+                    } else {
+                        console.error("Failed to send picture request to " + server.ip + ". Status code: " + response.status);
+                    }
+                })
+                .catch(error => {
+                    console.error("Error sending picture request to " + server.ip + ": " + error);
+                });
+            });
+        }
+
+        function closePicture() {
+            config.servers.forEach(function(server) {
+                fetch(server.ip + '/close_picture', {
+                    method: 'POST'
+                })
+                .then(response => {
+                    if (response.ok) {
+                        console.log("Close picture request sent to " + server.ip + " successfully.");
+                    } else {
+                        console.error("Failed to send close picture request to " + server.ip + ". Status code: " + response.status);
+                    }
+                })
+                .catch(error => {
+                    console.error("Error sending close picture request to " + server.ip + ": " + error);
+                });
+            });
+        }
+    </script>
+</body>
+</html>

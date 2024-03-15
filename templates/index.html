@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sebs Multi-Server Video Player</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <style>
+    
+    </style>    
+</head>
+<body>
+
+    <!--  <h1>Sebs Multi-Server Video Player</h1> -->
+
+    <div class="select-container">
+        <!-- <label for="videoSelect">Select Video:</label> -->
+
+        
+        <select id="videoSelect">
+            <option value="1.mp4">1.mp4</option>
+            <option value="2.mp4">2.mp4</option>
+            <option value="3.mp4">3.mp4</option>
+            <option value="4.mp4">4.mp4</option>
+            <option value="5.mp4">5.mp4</option>
+            <option value="6.mp4">6.mp4</option>
+            <option value="7.mp4">7.mp4</option>
+            <option value="8.mp4">8.mp4</option>
+            <!-- Add other video options here -->
+        </select>
+        <div class="selectbutton">
+            <img src="{{ url_for('static', filename='images/play.png') }}" alt="Play" onclick="makeApiCall('play', '/play')">
+            <!-- <p>Play</p> -->
+
+            
+        </div>
+    </div>
+    
+
+    <div class="button-container">
+        <div class="mainbutton">
+            <img src="{{ url_for('static', filename='images/play_first_icon.png') }}" alt="Play First Video" onclick="playFirstVideo()">
+            <p>Play First Video</p>
+        </div>
+        
+        <div class="mainbutton">
+            <img src="{{ url_for('static', filename='images/previous.png') }}" alt="Previous" onclick="playPreviousVideo()">
+            <p>Previous</p>
+        </div>
+        
+        <div class="mainbutton">
+            <img src="{{ url_for('static', filename='images/next.png') }}" alt="Next" onclick="playNextVideo()">
+            <p>Next</p>
+        </div>
+        
+        <div class="mainbutton">
+            <img src="{{ url_for('static', filename='images/stop.png') }}" alt="Stop" onclick="makeApiCall('stop', '/stop')">
+            <p>Stop</p>
+        </div>
+        
+        <div class="mainbutton">
+            <img src="{{ url_for('static', filename='images/pause.png') }}" alt="Pause" onclick="makeApiCall('pause', '/pause')">
+            <p>Pause</p>
+        </div>
+        
+        <div class="mainbutton">
+            <img src="{{ url_for('static', filename='images/resume.png') }}" alt="Resume" onclick="makeApiCall('resume', '/resume')">
+            <p>Resume</p>
+        </div>
+        
+        <div class="mainbutton">
+            <img src="{{ url_for('static', filename='images/restart.png') }}" alt="Restart" onclick="makeApiCall('restart', '/restart')">
+            <p>Restart</p>
+        </div>
+    </div>
+    
+    <!-- <h2>Playlists</h2> -->
+
+    
+
+    <div class="shuffle-container">
+        <div class="shufflebutton">
+            <img src="{{ url_for('static', filename='images/playlist.png') }}" alt="Play Sequential Playlist" onclick="startPlaylist1()">
+            <p>Play1</p>
+        </div>
+        
+        <div class="shufflebutton">
+            <img src="{{ url_for('static', filename='images/shuffle.png') }}" alt="Play Random Playlist" onclick="startPlaylist2()">
+            <p>Randomplaylist</p>
+        </div>
+        
+        <div class="shufflebutton">
+            <img src="{{ url_for('static', filename='images/purplestop.png') }}" alt="stop Playlist" onclick="stopPlaylist()">
+            <p>Stop Playlist</p>
+        </div>
+    </div>
+   
+
+    <!-- <h2>Pictures</h2> -->
+
+    <div class="picture-container">
+        <div class="picbutton">
+            <img src="{{ url_for('static', filename='images/picture.png') }}" alt="Display Picture" onclick="displayPicture()">
+            <p>Display Picture</p>
+        </div>
+        
+        <div class="picbutton">
+            <img src="{{ url_for('static', filename='images/picturestop.png') }}" alt="Close Picture" onclick="closePicture()">
+            <p>Close Picture</p>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+    
+</body>
+</html>

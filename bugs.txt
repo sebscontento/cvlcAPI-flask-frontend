@@ -1,0 +1,6 @@
+- when runnig from fx 5 and we do next it plays nr 2 
+
+- if you play a playlist while a video is paused the video cannot be shut down via gui.
+
+- close pic button closes any proces that are currently playing
+
