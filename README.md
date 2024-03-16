@@ -3,7 +3,7 @@
 ## Flask Frontend for CVLC Backend
 
 This is a Flask frontend application designed to work with the CVLC (Command Line VLC) backend for video streaming and processing.
-Launching the Flask App
+
 
 ## Installation
 
@@ -33,7 +33,7 @@ python3 app.py
 
 
 
-### Configuration
+## Configuration
 
 To make changes or add IP addresses and specify the video folder, edit the config.json file located at ../static/config.json
 
@@ -45,6 +45,10 @@ To make changes or add IP addresses and specify the video folder, edit the confi
     }
   ]
 }
+
+### Configuration using Excel and py scripts
+Configure your application by placing the Excel file (updated_config.xlsx) in the updating_IP_config folder, then run the Python script (fromexcel.py) located in the same folder to convert it to JSON (config.json)
+
 
 ### Instructions
 
