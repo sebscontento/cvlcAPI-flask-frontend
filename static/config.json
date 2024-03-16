@@ -19,16 +19,22 @@
         {
             "ip": "http://192.168.1.101:5000",
             "baseVideoPath": "/home/kristoffer/dev/artinstallation31maj/flasklogic/videos/"
-            
         },
         {
             "ip": "http://192.168.1.105:5000",
             "baseVideoPath": "/home/kristoffer/dev/artinstallation31maj/flasklogic/videos/"
-        
         },
         {
             "ip": "http://192.168.1.107:5000",
             "baseVideoPath": "/home/kristoffer/dev/artinstallation31maj/flasklogic/videos/"
+        },
+        {
+            "ip": "http://192.168.1.108:5000",
+            "baseVideoPath": "/home/kristoffer/dev/artinstallation31maj/flasklogic/videos/"
+        },
+        {
+            "ip": "http://192.168.1.109:5000",
+            "baseVideoPath": "/home/seb/dev/artinstallation31maj/flasklogic/videos/"
         }
     ]
 }

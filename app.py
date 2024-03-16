@@ -19,7 +19,7 @@ def index():
 # Route to serve CSS file
 @app.route('/styles.css')
 def styles():
-    return app.send_static_file('styles.css')
+    return app.send_static_file('stylescopy.css')
 
 # Route to serve JavaScript file
 @app.route('/script.js')
