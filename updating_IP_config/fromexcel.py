@@ -1,4 +1,5 @@
-#this file is to extract the excel data and update the config.json file
+#to make this work. first download updated_config. then place the file in the folder. third run this script.
+#this file is to extract the xlsx data and update the config.json file
 
 import pandas as pd
 import json
