@@ -1,31 +1,34 @@
 # Frontend for CVLC Backend
 
-This is a frontend application designed to work with the CVLC (Command Line VLC) backend for video streaming and processing. 
+This is a frontend application designed to work with the CVLC (Command Line VLC) backend for video streaming and processing. This frontend supports mutiple servers and can send commands to multiple servers at the same time. The backends and this frontend operate a with decoupled architecture. 
 
-Works with this FastAPI backend 
+Works best with this FastAPI backend 
 https://github.com/sebscontento/cvlcAPI-FastAPI-backend 
+
+Also Works with this Flask API backend
+https://github.com/sebscontento/cvlcAPI-flask-backend 
 
 
 ## Instructions
 
-    Run the CVLC backend application. If you dont use static IPs you need to run the backend first.
+    Run the CVLC backend application. If you dont use static IPs you need to run the backends first.
     Write the IP addresses and specify the video folder for active servers in the config.json file.
     Launch the frontend Flask application
 
 ## install requirements
 
-pip install -r requirements.txt
+    `pip install -r requirements.txt`
 
 ### To launch the Flask app, navigate to the project directory and run the following command:
 
-python3 app.py
+    `python3 app.py`
 
 
 ### launch with bashscript start_app.sh
 - remember to give the bash script permissions to run 
 
 
-./start_app.sh
+    `./start_app.sh`
 
 
 
