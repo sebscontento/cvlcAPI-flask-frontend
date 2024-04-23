@@ -1,13 +1,11 @@
 # README.md
 
-## Flask Frontend for CVLC Backend
+## Frontend for CVLC Backend
 
-This is a Flask frontend application designed to work with the CVLC (Command Line VLC) backend for video streaming and processing. 
+This is a frontend application designed to work with the CVLC (Command Line VLC) backend for video streaming and processing. 
 
 Works with this FastAPI backend 
 https://github.com/sebscontento/cvlcAPI-FastAPI-backend 
-
-    ```
 
 
 ## install requirements
@@ -29,8 +27,9 @@ python3 app.py
 
 ## Configuration of IPs
 
-To make changes or add IP addresses and specify the video folder, edit the config.json file located at ../static/config.json
+To make changes or add IP addresses and specify the video folder, edit the `config.json` file located at `../static/config.json`
 
+```json
 {
   "servers": [
     {
@@ -39,6 +38,7 @@ To make changes or add IP addresses and specify the video folder, edit the confi
     }
   ]
 }
+
 
 ### Configuration using Excel and py scripts
 Configure your application by placing the Excel file (updated_config.xlsx) in the updating_IP_config folder, then run the Python script (fromexcel.py) located in the same folder to convert it to JSON (config.json)
