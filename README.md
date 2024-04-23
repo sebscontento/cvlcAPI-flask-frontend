@@ -17,11 +17,11 @@ https://github.com/sebscontento/cvlcAPI-flask-backend
 
 ## install requirements
 
-    `pip install -r requirements.txt`
+    pip install -r requirements.txt
 
 ### To launch the Flask app, navigate to the project directory and run the following command:
 
-    `python3 app.py`
+    python3 app.py
 
 
 ### launch with bashscript start_app.sh
@@ -59,4 +59,4 @@ To create the spreadsheet you can use the py files in the `updating_IP_config` f
 
 ### Stopping the App
 
-To stop the Flask app, simply press Ctrl + C in the terminal where it is running.
+To stop the Flask app, simply press `Ctrl + C` in the terminal where it is running.
