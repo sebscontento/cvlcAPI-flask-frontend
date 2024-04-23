@@ -4,3 +4,30 @@
 
 - close pic button closes any proces that are currently playing
 
+function rebootServer() {
+    var username = prompt("Enter your username:");
+    var password = prompt("Enter your password:");
+    var serverUrl = "http://192.168.0.191:5000/reboot";
+
+    fetch(serverUrl, {
+        method: "POST",
+        headers: {
+            "Authorization": "Basic " + btoa(username + ":" + password)
+        }
+    })
+    .then(response => {
+        if (response.ok) {
+            console.log("Server reboot request sent successfully.");
+            // Add any additional logic here if needed
+        } else {
+            console.error("Failed to send server reboot request. Status code: " + response.status);
+        }
+    })
+    .catch(error => {
+        console.error("Error sending server reboot request:", error);
+    });
+}
+
+
+
+curl -X POST -u seb:psw http://192.168.0.167:5000/reboot

@@ -26,10 +26,10 @@ data = worksheet.get_all_values()
 df_updated = pd.DataFrame(data[1:], columns=data[0])
 
 # Filter out rows with missing values in 'ip' or 'baseVideoPath' columns
-df_updated = df_updated.dropna(subset=['ip', 'baseVideoPath'])
+df_updated = df_updated.dropna(subset=['Computer Number', 'ip', 'baseVideoPath'])
 
 # Exclude 'Computer Number' column
-df_updated = df_updated.drop(columns=['Computer Number'])
+#df_updated = df_updated.drop(columns=['Computer Number'])
 
 # Convert empty strings to NaN
 df_updated.replace('', pd.NA, inplace=True)

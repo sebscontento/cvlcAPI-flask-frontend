@@ -1,0 +1,28 @@
+<!-- admin.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+</head>
+<body>
+    <h1>Welcome to the Admin Page</h1>
+    <!-- Add your content here -->
+
+    <a href="/"><button>Go back to Index Page</button></a>
+
+  
+    
+    <div id="rebootOptions">
+        <select id="computerNumbersSelect" multiple onclick="showRebootOptions()">
+            <option value="all">All</option>
+            <!-- Dynamically populate options with computer numbers -->
+        </select>
+        <button onclick="rebootServers()">Confirm Reboot</button>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,5 +1,4 @@
-//script.js
-//orgininal script file. worked relativly fine with flask backend
+//frontscript.js
 
 var videoIndex = 0; // Keep track of the currently playing video index
 var config; // Declare config variable
@@ -142,7 +141,6 @@ function closePicture() {
     });
 }
 
-
 function showRebootOptions() {
     // Extract computer numbers from the config
     var computerNumbers = config.servers.map(server => server["Computer Number"]);
@@ -169,16 +167,36 @@ function showRebootOptions() {
 
     // Show the reboot options div
     document.getElementById("rebootOptions").style.display = "block";
+
+    // Add event listener to handle selecting "All"
+    computerNumbersSelect.addEventListener("change", function() {
+        if (this.value === "all") {
+            // Select all options except the "All" option
+            Array.from(this.options).forEach(option => {
+                option.selected = true;
+            });
+        }
+    });
 }
+
+
+
 
 function rebootServers() {
     // Retrieve selected computer numbers
     var selectedNumbers = [];
     var computerNumbersSelect = document.getElementById("computerNumbersSelect");
-    for (var i = 0; i < computerNumbersSelect.options.length; i++) {
-        var option = computerNumbersSelect.options[i];
-        if (option.selected && option.value !== "all") {
-            selectedNumbers.push(option.value);
+
+    if (computerNumbersSelect.value === "all") {
+        // If "All" is selected, add all computer numbers
+        selectedNumbers = config.servers.map(server => server["Computer Number"]);
+    } else {
+        // Otherwise, add only selected options
+        for (var i = 0; i < computerNumbersSelect.options.length; i++) {
+            var option = computerNumbersSelect.options[i];
+            if (option.selected && option.value !== "all") {
+                selectedNumbers.push(option.value);
+            }
         }
     }
 
@@ -215,6 +233,4 @@ function rebootServers() {
             console.error("Error sending server " + number + " reboot request:", error);
         });
     });
-
 }
-

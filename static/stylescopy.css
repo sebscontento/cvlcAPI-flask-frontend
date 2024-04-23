@@ -54,8 +54,18 @@
     align-items: center; /* Align items vertically */
     justify-content: center;
     gap: 60px; /* Add some space between flex items */
+    margin-bottom: 20px; /* Increase margin between select menu and play button */
     background-color:hsl(120,100%,95%);
     border-radius: 30px; /* Adjust the value as per your preference for rounded corners */
+    overflow: hidden; /* This ensures that child elements don't overflow the rounded corners */
+}
+
+
+.admin-container {
+    display: flex;
+    align-items: center; /* Align items vertically */
+    justify-content: right;
+    border-radius: 10px; /* Adjust the value as per your preference for rounded corners */
     overflow: hidden; /* This ensures that child elements don't overflow the rounded corners */
 }
 

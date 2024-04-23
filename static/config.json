@@ -1,39 +1,48 @@
 {
     "servers": [
         {
-            "ip": "http://192.168.0.199:5000",
-            "baseVideoPath": "/home/seb/dev/artinstallation31maj/flasklogic/videos/"
+            "Computer Number": "1",
+            "ip": "http://192.168.0.199:8000",
+            "baseVideoPath": "/home/seb/dev/fasttestapi/videos/"
         },
         {
-            "ip": "http://192.168.0.191:5000",
+            "Computer Number": "2",
+            "ip": "http://192.168.0.167:5000",
             "baseVideoPath": "/home/music/dev/artinstallation31maj/flasklogic/videos/"
         },
         {
-            "ip": "http://192.168.8.187:5000",
-            "baseVideoPath": "/home/lab61/dev/artinstallation31maj/flasklogic/videos/"
+            "Computer Number": "3",
+            "ip": "http://192.168.8.188:8000",
+            "baseVideoPath": "/home/lab61/dev/cvlcAPI-FastAPI-backend/videos/"
         },
         {
-            "ip": "http://192.168.0.191:5000",
-            "baseVideoPath": "/home/music/dev/artinstallation31maj/flasklogic/videos/"
+            "Computer Number": "4",
+            "ip": "http://192.168.0.191:8000",
+            "baseVideoPath": "/home/music/dev/fasttestapi/videos/"
         },
         {
+            "Computer Number": "5",
             "ip": "http://192.168.1.101:5000",
             "baseVideoPath": "/home/kristoffer/dev/artinstallation31maj/flasklogic/videos/"
         },
         {
-            "ip": "http://192.168.1.105:5000",
+            "Computer Number": "6",
+            "ip": "http://192.155.1.105:5000",
             "baseVideoPath": "/home/kristoffer/dev/artinstallation31maj/flasklogic/videos/"
         },
         {
+            "Computer Number": "7",
             "ip": "http://192.168.1.107:5000",
             "baseVideoPath": "/home/kristoffer/dev/artinstallation31maj/flasklogic/videos/"
         },
         {
-            "ip": "http://192.168.1.108:5000",
+            "Computer Number": "8",
+            "ip": "http://192.193.1.108:5000",
             "baseVideoPath": "/home/kristoffer/dev/artinstallation31maj/flasklogic/videos/"
         },
         {
-            "ip": "http://192.168.1.109:5000",
+            "Computer Number": "9",
+            "ip": "http://192.165.1.109:5000",
             "baseVideoPath": "/home/seb/dev/artinstallation31maj/flasklogic/videos/"
         }
     ]

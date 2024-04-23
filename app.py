@@ -3,7 +3,9 @@ Flask application frontend.
 Author: [Sebastian Solórzano Holbøll]
 Version: [2.2]
 Date: [15/03/24]
-#works with app.py 
+#works with app.py in /dev/artinstallation31maj/flasklogic/
+
+
 """
 
 
@@ -16,6 +18,11 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
+@app.route('/admin')
+def admin():
+    # Render the admin.html template
+    return render_template('admin.html')
+
 # Route to serve CSS file
 @app.route('/styles.css')
 def styles():
@@ -24,7 +31,7 @@ def styles():
 # Route to serve JavaScript file
 @app.route('/script.js')
 def script():
-    return app.send_static_file('script.js')
+    return app.send_static_file('frontscript.js')
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5001)
