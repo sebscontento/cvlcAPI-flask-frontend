@@ -38,7 +38,7 @@ To make changes or add IP addresses and specify the video folder, edit the `conf
     }
   ]
 }
-
+```
 
 ### Configuration using Excel and py scripts
 Configure your application by placing the Excel file (updated_config.xlsx) in the updating_IP_config folder, then run the Python script (fromexcel.py) located in the same folder to convert it to JSON (config.json)
